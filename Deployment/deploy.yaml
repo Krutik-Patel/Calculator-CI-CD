@@ -1,0 +1,16 @@
+---
+- name: Pull Docker Image of Calculator
+  hosts: all
+  vars:
+    ansible_python_interpreter: /home/krutik/anaconda3/bin/python
+  tasks:
+    - name: Pull image
+      docker_image:
+        name: krutikpatel/calculator:latest
+        source: pull
+    - name: Start docker service
+      service:
+        name: docker
+        state: started
+    - name: Running container
+      shell: docker run -it -d --name Calculator krutikpatel/calculator
