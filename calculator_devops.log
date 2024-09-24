@@ -1,0 +1,15 @@
+2024-09-24 14:28:36.343 [main] INFO  com.calculator.Calculator - Initializing Calculator App
+2024-09-24 14:28:36.345 [main] INFO  com.calculator.Calculator - Printing operations
+2024-09-24 14:28:39.840 [main] INFO  com.calculator.Calculator - User input: 1
+2024-09-24 14:28:41.232 [main] INFO  com.calculator.Calculator - Calculating square root of 4.0
+2024-09-24 14:28:41.233 [main] INFO  com.calculator.Calculator - Answer: 2.0
+2024-09-24 14:28:41.233 [main] INFO  com.calculator.Calculator - Printing operations
+2024-09-24 14:28:48.703 [main] INFO  com.calculator.Calculator - User input: 2
+2024-09-24 14:28:49.704 [main] INFO  com.calculator.Calculator - Calculating factorial of 4
+2024-09-24 14:28:49.704 [main] INFO  com.calculator.Calculator - Answer: 24.0
+2024-09-24 14:28:49.705 [main] INFO  com.calculator.Calculator - Printing operations
+2024-09-24 14:28:51.840 [main] INFO  com.calculator.Calculator - User input: 5
+2024-09-24 14:28:51.840 [main] INFO  com.calculator.Calculator - Answer: 0.0
+2024-09-24 14:28:51.840 [main] INFO  com.calculator.Calculator - Printing operations
+2024-09-24 14:28:58.488 [main] INFO  com.calculator.Calculator - User input: -1
+2024-09-24 14:28:58.488 [main] INFO  com.calculator.Calculator - Terminate Calculator App
