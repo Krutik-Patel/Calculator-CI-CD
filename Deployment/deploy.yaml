@@ -1,6 +1,6 @@
 ---
 - name: Pull Docker Image of Calculator
-  hosts: all
+  hosts: localhost
   vars:
     ansible_python_interpreter: /home/krutik/anaconda3/bin/python
   tasks:
