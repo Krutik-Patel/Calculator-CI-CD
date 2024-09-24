@@ -1,1 +1,3 @@
 localhost ansible_user = krutik
+[all]
+localhost ansible_python_interpreter=/home/krutik/anaconda3/bin/python
