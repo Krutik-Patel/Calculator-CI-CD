@@ -1,333 +1,619 @@
-### Project Overview
 
-This project focuses on using DevOps tools and workflows to develop, deploy, and monitor a simple calculator program. The emphasis is on the DevOps pipeline, covering the complete process from local development to deployment.
 
-### Objectives
+<p style="text-align:center; font-size: 50px;">
+<strong>SPE Assiginment 1 Report</strong>
+</p>
 
-1. Set up a local project in an IDE.
-2. Use version control for tracking and collaboration.
+<p style="text-align:center; font-size: 30px;">
+Name: Krutik Patel IMT2021024<br>
+</p>
+
+## Github Link: [Krutik-Patel/Calculator-CI-CD](https://github.com/Krutik-Patel/Calculator-CI-CD)
+
+## DockerHub Link: [krutikpatel/calculator/](https://hub.docker.com/repository/docker/krutikpatel/calculator/general)
+
+<div style="page-break-after: always;"></div>
+
+
+  
+
+
+## **Project Overview**
+
+  
+
+This project demonstrates the integration of DevOps tools and workflows in developing, deploying, and monitoring a simple calculator application. The primary focus is on establishing a complete DevOps pipeline.
+  
+
+---
+
+  ## **What and Why of DevOps?**
+## What is DevOps?
+
+  DevOps encompasses a collection of methodologies that merge software development (Dev) with IT operations (Ops). Its primary goal is to reduce the development cycle time and consistently deliver high-quality software. DevOps incorporates automation, continuous integration, and continuous delivery into the development process. It fosters collaboration among developers, operations teams, and other stakeholders. Essential elements of DevOps include workflow automation, infrastructure as code, version control, and monitoring systems.
+
+
+## Why DevOps?
+
+
+Enhanced Collaboration: DevOps fosters better communication and efficiency by bridging the gap between development and operations teams. Faster Delivery: By leveraging automation and continuous integration, the software development lifecycle is accelerated, allowing for quicker deployment to production. Increased Reliability: Automated testing and monitoring contribute to fewer errors and greater stability in production environments. Scalability: DevOps enables easy management of infrastructure changes and software updates in large-scale systems with minimal manual intervention. Improved Quality: Continuous feedback loops help detect issues earlier in the process, thereby enhancing software quality. Cost Efficiency: Automation minimizes manual processes, saving time and resources, and ultimately reducing operational costs.
+
+
+--- 
+
+## **Objectives**
+
+  
+
+1. Set up a local development environment within an IDE.
+
+2. Implement version control for effective tracking and collaboration.
+
 3. Push the project to a remote Git repository.
-4. Create a CI/CD pipeline to automatically build and test the project on code updates.
-5. Containerize the project and push it to a remote container registry.
-6. Deploy the container using Jenkins.
 
-### Tools
+4. Design and implement a CI/CD pipeline for automatic builds and tests on code updates.
 
-- *Code Editor*: IntelliJ IDEA Ultimate
-- *Version Control*: Git and GitHub
-- *Build Tool*: Apache Maven
-- *CI/CD*: Jenkins
-- *Containerization*: Docker
-- *Configuration Management*: Ansible
-- *Build Automation*: Ngrok, GitHub webhooks
+5. Containerize the application and push it to a remote container registry.
 
-### Workflow
+6. Deploy the container using Jenkins for a streamlined and automated process.
 
-1. *Development*: VS Code.
-2. *Version Control*: Manage code with Git, hosted on GitHub.
-3. *Build*: Use Maven to compile and package the project.
-4. *CI/CD*: Jenkins automates tests and deployments.
-5. *Containerization*: Use Docker for consistent deployments.
-6. *Configuration Management*: Ansible automates infrastructure setup.
-7. *Build Automation*: Ngrok facilitates GitHub webhooks triggering Jenkins builds.
+  
 
-### Installation and Setup
+---
 
-- *Java*: Install via sudo apt install default-jre and sudo apt install default-jre, verify with java --version and javac --version.
-- *VS Code*: Download from [VS Code](https://code.visualstudio.com/)site and follow the installation steps.
-- *Git*: Install with sudo install git, verify with git --version.
-- *Maven*: Install via sudo apt install maven, verify with mvn --version.
-- *Jenkins*: Install with brew install jenkins, start Jenkins with brew services start jenkins.
-- *Docker*: Download and install Docker Desktop, verify with docker --version.
-- *Ansible*: Install via brew install ansible, verify with ansible --version.
-- *Ngrok*: Download binaries from the official site, set up with ngrok config add-authtoken <your_authtoken>. 
+  
 
-This setup allows seamless integration and deployment using DevOps tools.
+## **Tools & Technologies**
 
-### Project Implementation
+  
 
-To begin our journey, we'll create a new project in VS Code using Ctrl + Shift + P and type Java: Create new project. In that choose maven as a build tool and choose maven-archetype-quickstart and select a version. In the next dialogue box, enter the name of your project, like com.calculator, as shown in "Insert 1.jpg here". Enter the artifact Id and select your destination folder where you want to start your project. You'll now have a calculator directory with some directory structure.
+- **Code Editor**: [VS Code](https://code.visualstudio.com/)
 
-#### Git Workflow
+- **Version Control**: Git and GitHub
 
-Commands used to initialise a new Git repository, add files to the staging area, commit changes, set up a remote repository on GitHub, and push the changes to the remote repository. git init git add . git commit -m “” git status git remote add origin git push -u origin main Enter username and PAT (Personal Access Token).
+- **Build Tool**: Apache Maven
 
-#### Project Structure
+- **CI/CD**: Jenkins
 
-Insert 2.jpg here
+- **Containerization**: Docker
 
-Make a table of 
+- **Configuration Management**: Ansible
 
-	--
-	Directory/File | Usage | 
-	calculator_app | main directory |
-	 calculator_app/Deployment | files for ansible |
-	 calculator_app/src | contains java code for calculator app and testing java file | 
-	 calculator_app/src/main/java/com/calculator | has java code for calculator app |
-	 calculator_app/src/resources | Has configuration files for log4j2.xml dependency |
-	 calculator_app/src/test/java | Has testing java file |
-	 calculator_app/.gitignore | Files/Directories to be ignored by git |
-	 calculator_app/calculator_devops.log | Log file for the project |
-	 calculator_app/Dockerfile | Config file for Docker |
-	 calculator_app/pom.xml | Config file for maven |
-	 calculator_app/target | Stores built JAR and class files |
+- **Build Automation**: Ngrok, GitHub Webhooks
 
-#### Steps to Build and Run the project
+  
 
-##### pom.xml
+---
 
-Insert 3.jpg
+  
 
--- Assuming the java code has some starter code, to build the app, do `mvn clean`. This cleans all the built files and JARs. Do `mvn compile`, this compiles the project and associated test cases. This phase ensures the code is error free and ready for the subsequent steps.
+## **Workflow**
 
--- `mvn install`: this generates the JAR file. This final step packages the project, creating the desired output artifact once the compilation is successful.
+  
 
--- Alternatively you can do `mvn clean install`, as a single step that does all of the above simultaneously.
+1. **Development**: Using VS Code for coding and project management.
 
-##### Running build JAR file
+2. **Version Control**: Code is managed with Git, hosted on GitHub.
 
--- Run the JAR using `java -jar <filename>.jar`. Our pom.xml generates two JARs, one without dependencies and the other with dependiencies.
+3. **Build**: Maven is used to compile and package the project.
 
-Within the Maven configuration file (pom.xml), the <mainClass> tag specifies
-the path to the main Java file following the package structure. Additionally, the
-<descriptorRef> tag is employed to modify the default output JAR file name.
-To include project dependencies, the <dependencies> tag is utilised, enabling
-the addition of external libraries. In our scenario, we've incorporated
-dependencies such as log4j, utilised for logging functionality, and JUnit,
-employed for testing purposes.
+4. **CI/CD**: Jenkins automates the process of testing and deployment.
 
-##### Implement Logging and write Tests
+5. **Containerization**: Docker is employed to ensure consistent deployments across environments.
+
+6. **Configuration Management**: Ansible automates infrastructure setup and deployment.
+
+7. **Build Automation**: Ngrok facilitates GitHub webhooks for triggering Jenkins builds.
+
+  
+
+---
+
+  
+
+## **Installation and Setup**
+
+  
+
+1. **Java**: Install with:
+
+```bash
+   sudo apt install default-jre
+   sudo apt install default-jdk
+```
+
+   Verify with `java --version` and `javac --version`.
+
+  
+
+2. **VS Code**: Download from [VS Code](https://code.visualstudio.com/).
+
+  
+
+3. **Git**: Install using:
+
+```bash
+   sudo apt install git
+```
+
+   Verify with `git --version`.
+
+  
+
+4. **Maven**: Install using:
+
+```bash
+   sudo apt install maven
+```
+
+   Verify with `mvn --version`.
+
+  
+
+5. **Jenkins**: Install with:
+
+```bash
+   brew install jenkins
+```
+
+   Start Jenkins with `brew services start jenkins`.
+
+  
+
+6. **Docker**: Install Docker Desktop from [here](https://www.docker.com/products/docker-desktop), verify with `docker --version`.
+
+  
+
+7. **Ansible**: Install via:
+
+```bash
+   brew install ansible
+```
+
+   Verify with `ansible --version`.
+
+  
+
+8. **Ngrok**: Download from the official [Ngrok site](https://ngrok.com/) by signing up for free account and follow the installation steps, and set it up with:
+
+```bash
+   ngrok config add-authtoken <your_authtoken>
+```
+
+  
+
+---
+
+  
+
+## **Project Implementation**
+
+  
+
+To start, create a new project in VS Code:
+
+  
+
+1. Open the command palette (`Ctrl + Shift + P`).
+
+2. Select `Java: Create new project`.
+
+3. Choose **Maven** as the build tool and select `maven-archetype-quickstart`.
+
+4. Enter a project name, e.g., `com.calculator`, and choose your project folder.
+
+5. Complete the java code and write tests for the calculator program. JUnit is used for testing in this project. You can refer to the github repo of the project [link](https://github.com/Krutik-Patel/Calculator-CI-CD).
+
+  
+
+![Image: 1](images/1.jpg)
+
+  
+
+### **Git Workflow**
+
+  
+
+Initialize a Git repository and push the project to GitHub using the following commands:
+
+  
+
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin <repository-url>
+git push -u origin main
+```
+
+  
+
+---
+
+  
+
+## **Project Structure**
+
+  
+
+| Directory/File                                                | Usage                                      |
+| ------------------------------------------------------------- | ------------------------------------------ |
+| `calculator_app`                                              | Main directory                             |
+| `calculator_app/Deployment`                                   | Files for Ansible deployment               |
+| `calculator_app/src`                                          | Java code for the calculator app and tests |
+| `calculator_app/src/main/java/com/calculator`                 | Calculator app's main code directory       |
+| `calculator_app/src/main/java/com/calculator/Calculator.java` | Calculator app's main code                 |
+| `calculator_app/src/resources`                                | Configuration files (e.g., `log4j2.xml`)   |
+| `calculator_app/src/test/java`                                | Test file directory                        |
+| `calculator_app/src/test/java/CalculatorTest.java`            | Test file for Calculator app               |
+| `calculator_app/.gitignore`                                   | Files/Directories to ignore for Git        |
+| `calculator_app/calculator_devops.log`                        | Log file                                   |
+| `calculator_app/Dockerfile`                                   | Docker configuration                       |
+| `calculator_app/pom.xml`                                      | Maven configuration                        |
+| `calculator_app/target`                                       | Stores built JAR and class files           |
+
+  
+
+![Image 2](images/2.jpg)
+
+  
+
+---
+
+  
+
+## **Building and Running the Project**
+
+  
+
+### **pom.xml Configuration**
+
+  Setup your pom.xml file like shown below.
+
+![Image 3](images/3.jpg)
+
+  
+
+Run the following commands to clean, compile, and install the project:
+
+  
+
+```bash
+mvn clean     # Cleans built files
+mvn compile   # Compiles the project
+mvn install   # Creates the JAR file
+```
+
+  `mvn clean`:Removes the 'target' folder, ensuring a fresh start for the subsequent compilation. This step eliminates any previous build artifacts.
+  `mvn compile`: Compiles the project and its associated test cases. This phase ensures the code is error-free and ready for the subsequent steps.
+  `mvn install`: Generates the JAR file. This final step packages the project, creating the desired output artifact (JAR file) once the compilation is successful.
+
+Alternatively, run:
+
+  
+
+```bash
+mvn clean install
+```
+
+  
+
+This will clean, compile, and install in one step.
+
+  
+
+### **Running the JAR File**
+
+  
+
+Use the following command to run the JAR:
+
+  
+
+```bash
+java -jar <filename>.jar
+```
+
+  
+
+---
+
+  
+
+## **Logging and Testing**
+
+  
+
+For logging, first configure your log4j2.xml file:
+
+  
+![Image 4](images/4.jpg)
+
+Then use Log4j with the following import statements in the main Calculator java file. Consequently update your pom.xml file to include the dependencies. Sample `pom.xml` file is provided in the repo.
+
+
+```java
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+```
 
 The specified logging format includes the following components:
-"%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
-%d{yyy-MM-dd HH:mm:ss.SSS}: Represents the timestamp with millisecond
-precision.
-%t: Indicates the running thread's name.
-9
-Mini Project - Simple Calculator - Report IMT2020035
-%-5level: Denotes the log level with left alignment and a maximum width of 5
-characters.
-%logger{36}: Refers to the logger's name within a maximum of 36 characters.
-%msg: Represents the user-written message contained in the source code.
-The necessary imports for Log4j
 
-`import org.apache.logging.log4j.LogManager;`
-`import org.apache.logging.log4j.Logger;`
-
-Creating an instance of the Logger in Log4j involves using a statement to
-initialise a Logger object within the code.
-
-Do `mvn clean install`, this will run tests and build the JAR. It should look something like this: Insert 5.jpg here
+- `%d{yyyy-MM-dd HH:mm:ss.SSS}`: Represents the timestamp with millisecond precision.
+- `%t`: Indicates the running thread's name.
+- `%-5level`: Denotes the log level with left alignment and a maximum width of 5 characters.
+- `%logger{36}`: Refers to the logger's name within a maximum of 36 characters.
+- `%msg`: Represents the user-written message contained in the source code.
 
 
-##### Jenkins
+Run the following command to execute tests and build the JAR:
 
-Go to https://localhost:8080 and install the necessary plugins.
-We will establish a Jenkins pipeline comprising six distinct stages, as outlined
-below:
 
-Insert 6.jpg here
+```bash
+mvn clean install
+```
 
-``` Jenkins
-pipeline{
-    environment{
-    docker_image = ""
-    }
-    agent any
-    tools {
-        maven 'Maven 3.9.6'
-    }
-    stages{
-        stage('Stage 1: Git Clone'){
-            steps{
-            git branch: 'master',
-            
-            url:'https://github.com/Krutik-Patel/Calculator-CI-CD.git'
-            }
-        }
-        stage('Stage 2: Maven Build') {
-            steps {
-                sh 'mvn clean install'
-            }
-        }
-        stage('Stage 3: Build Docker Image'){
-            steps{
-                script{
-                    docker_image = docker.build "krutikpatel/calculator:latest"
-                }
-            }
-        }
-        stage('Stage 4: Push docker image to hub') {
-            steps{
-                script{
-                    docker.withRegistry('', 'DockerHubCred'){
-                        docker_image.push()
-                    }
-                }
-            }
-        }
-        stage('Stage 5: Clean docker images'){
-            steps{
-                script{
-                    sh 'docker container prune -f'
-                    sh 'docker image prune -f'
-                }
-            }
-        }
-        stage('Step 6: Ansible Deployment'){
-            steps{
-                ansiblePlaybook becomeUser: null,
-                colorized: true,
-                credentialsId: 'localhost',
-                disableHostKeyChecking: true,
-                installation: 'Ansible',
-                inventory: 'Deployment/inventory',
-                playbook: 'Deployment/deploy.yaml',
-                sudoUser: null
-            }
-        }
-    }
+![Image 5](images/5.jpg)
+
+  
+
+---
+
+  
+
+## **Jenkins Pipeline**
+
+  
+
+To set up Jenkins, go to `http://localhost:8080` and install the necessary plugins.
+
+  
+
+![Image 6](images/6.jpg)
+
+  
+
+Here's the Jenkins pipeline script that is used in the project:
+
+  
+
+```groovy
+pipeline {
+    environment {
+        docker_image = ""
+    }
+    agent any
+    tools {
+        maven 'Maven 3.9.6'
+    }
+    stages {
+        stage('Git Clone') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Krutik-Patel/Calculator-CI-CD.git'
+            }
+        }
+        stage('Maven Build') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    docker_image = docker.build "krutikpatel/calculator:latest"
+                }
+            }
+        }
+        stage('Push Docker Image to Hub') {
+            steps {
+                script {
+                    docker.withRegistry('', 'DockerHubCred') {
+                        docker_image.push()
+                    }
+                }
+            }
+        }
+        stage('Clean Docker Images') {
+            steps {
+                script {
+                    sh 'docker container prune -f'
+                    sh 'docker image prune -f'
+                }
+            }
+        }
+        stage('Ansible Deployment') {
+            steps {
+                ansiblePlaybook inventory: 'Deployment/inventory', playbook: 'Deployment/deploy.yml'
+            }
+        }
+    }
 }
 ```
 
-###### Overview
-Stage 1: Git Clone
+  ### Pipeline Stages Summary
 
-Purpose: This stage clones the specified Git repository from the master branch.
-Steps:
-Uses the git step to clone the repository from the URL https://github.com/Krutik-Patel/Calculator-CI-CD.git.
-Stage 2: Maven Build
+1. **Git Clone**: Clones the Git repository from the master branch using the URL `https://github.com/Krutik-Patel/Calculator-CI-CD.git`.
+   
+2. **Maven Build**: Builds the project using Maven with the command `mvn clean install` to clean and compile the code.
 
-Purpose: This stage builds the project using Maven.
-Steps:
-Executes the Maven command mvn clean install to clean and build the project.
-Stage 3: Build Docker Image
+3. **Build Docker Image**: Builds a Docker image for the application using `docker.build`, tagging it as `krutikpatel/calculator:latest`.
 
-Purpose: This stage builds a Docker image for the application.
-Steps:
-Uses the docker.build method to build a Docker image with the tag krutikpatel/calculator:latest.
-Stage 4: Push Docker Image to Hub
+4. **Push Docker Image to Hub**: Authenticates with Docker Hub and pushes the Docker image using `docker.withRegistry` with the credentials `DockerHubCred`.
 
-Purpose: This stage pushes the built Docker image to Docker Hub.
-Steps:
-Uses docker.withRegistry to authenticate with Docker Hub using the credentials DockerHubCred.
-Pushes the Docker image to the repository.
-Stage 5: Clean Docker Images
+5. **Clean Docker Images**: Removes unused containers and images using `docker container prune -f` and `docker image prune -f` to free up space.
 
-Purpose: This stage cleans up unused Docker containers and images to free up space.
-Steps:
-Executes docker container prune -f to remove all stopped containers.
-Executes docker image prune -f to remove all unused images.
-Stage 6: Ansible Deployment
+6. **Ansible Deployment**: Deploys the application using the `ansiblePlaybook` step to run the Ansible playbook `deploy.yaml`, with additional options like colorized output and disabling host key checking.
 
-Purpose: This stage deploys the application using Ansible.
-Steps:
-Uses the ansiblePlaybook step to run the Ansible playbook Deployment/deploy.yaml with the specified inventory file Deployment/inventory.
-Various options are set, such as colorized output and disableHostKeyChecking.
+---
 
-##### Docker
+  
 
-Now, we will create a docker container for our project. For this, we need a
-Dockerfile.
-The purpose of the above code is to generate a Docker container with
-OpenJDK version 11 as the base image which acts like a JVM. The final
-container can be run independently without any dependencies.
-In the pipeline script, docker_image = docker.build “krutikpatel/calculator:latest”
-builds the docker image.
+## **Docker Integration**
 
-``` Docker
+  
+
+Use the following `Dockerfile`, to facilitate building of docker image in the pipeline script.
+
+  
+
+```Dockerfile
 FROM openjdk:17
 COPY ./target/calculator_app-1.0-SNAPSHOT-jar-with-dependencies.jar ./
 WORKDIR ./
-CMD ["java","-jar","calculator_app-1.0-SNAPSHOT-jar-with-dependencies.jar"]
+CMD ["java", "-jar", "calculator_app-1.0-SNAPSHOT-jar-with-dependencies.jar"]
 ```
 
-Insert 7.jpg here
+  
 
-```
+![Image 7](images/7.jpg)
+
+  
+
+You can verify that the Docker image is running using:
+
+  
+
+```bash
 sudo docker images
 ```
 
-The provided command allows verification of the successful creation of a
-Docker image.
+  
 
+---
 
+  
 
-##### Pushing to DockerHub
+## **Pushing to DockerHub**
 
-Stage 4 focuses on pushing the image to docker hub. To achieve this, set up a credential in
-Jenkins, containing the Jenkins username and password for authentication.
+  
 
-Insert image 8.jpg
+Stage 4 focuses on pushing the image to docker hub. In the subsequent steps, ansible will pull from dockerhub. To achieve this, set up a credential in Jenkins, containing the Jenkins username and password for authentication.
+  
 
-##### Freeing up dangling pointers:
+![Image 8](images/8.jpg)
 
-To free up space and we’ll delete the unused docker containers and
-images. 
-``` bash
+  
+
+---
+
+  
+
+## **Freeing Up Resources**
+
+  
+
+Clean up unused Docker containers and images with the following commands. Also add this to the pipeline script.
+
+  
+
+```bash
 docker container prune -f
 docker image prune -f
 ```
 
-##### Pulling Image from Dockerhub and create container using Ansible
+  
 
-We are going to pull the images from the DockerHub and create
-containers using Ansible. We will create a Deployment folder and create two
-files named inventory and deploy.yml.
-Inventory file
+---
+
+  
+
+## **Pulling and Running Docker Containers with Ansible**
+
+  
+
+Create two files, `inventory` and `deploy.yml`, in the `Deployment` folder:
+
+  
+
+- **Inventory file**:
+
+  
+
 ```ini
 localhost ansible_connection=local ansible_user=krutik
 ```
 
+  
 
-Deploy.yml file
+- **Deploy.yml**:
+
+  
+
 ```yaml
 ---
 - name: Pull Docker Image of Calculator
-  hosts: localhost
-  vars:
-    ansible_python_interpreter: /usr/bin/python3
-  tasks:
-    - name: Pull image
-      docker_image:
-        name: krutikpatel/calculator:latest
-        source: pull
-    - name: Start docker service
-      service:
-        name: docker
-        state: started
-    - name: Running container
-      shell: docker run -it -d --name Calculator krutikpatel/calculator
+  hosts: localhost
+  tasks:
+    - name: Pull Docker image
+      docker_image:
+        name: krutikpatel/calculator:latest
+        source: pull
+    - name: Start Docker service
+      service:
+        name: docker
+        state: started
+    - name: Run container
+      shell: docker run -it -d --name Calculator krutikpatel/calculator
 ```
 
+  
 
-Run the following command to view the list of images;
-`docker images`
+Run the following command to view the list of images:
 
-Now, run the following command to create a container from a image;
+  
 
-`docker run -it -d --name Calculator krutikpatel/calculator:latest`
-To view the containers run the following command;
-`docker ps`
-Now, to execute the container;
-`docker start -a -i Calculator`
+```bash
+docker images
+```
 
-Insert image 9.jpg and 10.jpg
+Run the following command to create a container from the image using the first command given below. To view the containers run the second command and to execute the container, run the last command; 
+
+  ```
+  docker run -it -d --name Calculator krutikpatel/calculator:latest
+  docker ps
+  docker start -a -i Calculator
+  ```
+  
+  ![Image 9](images/9.jpg)
+  ![Image 10](images/10.jpg)
+
+---
+
+  
+
+## **Automating Pipeline Execution with Ngrok**
+
+ 
+
+Use Ngrok to expose Jenkins locally:
+
+  
+
+```bash
+ngrok http 8080
+```
+
+  
+  This will establish an HTTP tunnel using Ngrok. Copy the forwarding URL provided by Ngrok and create a GitHub webhook, using this URL as the payload URL for the webhook configuration. GitHub will initiate a test connection, and a '200 OK' message will confirm the proper setup. Next, update the Jenkins URL to the forwarding URL obtained from Ngrok and configure a build trigger for Git SCM polling. This setup ensures that the pipeline automatically initiates the build process whenever Jenkins detects a new push to the associated GitHub repository. 
+
+  
+
+![Image 11](images/11.jpg)
+![Image 12](images/12.jpg)  
+
+You can verify the setup by pushing some code to the GitHub repository. In the given images below verify using the build times that the build starts once the changes are pushed in the repo and the build starts automatically.
 
 
-##### Automating Pipeline Execution with Git SCM Polling and Ngrok
 
-Insert image 11.jpg, 12.jpg, 
+![Image 13](images/13.jpg)  
+![Image 14](images/14.jpg)  
+![Image 15](images/15.jpg)  
+![Image 16](images/16.jpg)  
+
+---
+## **Conclusion**
 
 
-Open a terminal window and enter the command `ngrok http 8080`. This
-command will establish an HTTP tunnel using Ngrok, exposing the local server
-running on port 8080 to the internet.
-Copy the forwarding URL provided by Ngrok. Subsequently, create a GitHub
-webhook and utilise this URL as the payload URL for the webhook
-configuration. GitHub initiates a test connection, and upon successful
-configuration, a '200 OK' message confirms the proper setup.
-Now, we'll update the Jenkins URL to the forwarding URL obtained and
-configure a build trigger for Git SCM polling. This setup ensures that our
-pipeline automatically initiates the build process whenever Jenkins detects a
-new push made to the associated GitHub repository. You can check by pushing some code in the github repo.
+The Simple Calculator project successfully demonstrates the integration of DevOps tools and workflows. The project was containerized using Docker and deployed using Jenkins and Ansible. GitHub was used for version control, and the build process was automated with Jenkins pipelines.
+
+---
