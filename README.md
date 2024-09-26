@@ -330,4 +330,4 @@ configuration, a '200 OK' message confirms the proper setup.
 Now, we'll update the Jenkins URL to the forwarding URL obtained and
 configure a build trigger for Git SCM polling. This setup ensures that our
 pipeline automatically initiates the build process whenever Jenkins detects a
-new push made to the associated GitHub repository.
+new push made to the associated GitHub repository. You can check by pushing some code in the github repo.
