@@ -41,7 +41,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testPower() {
+    public void testPower2() {
         int base = 3;
         int exp = 0;
         double expected = 1.0;
