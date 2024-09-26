@@ -39,4 +39,12 @@ public class CalculatorTest {
         double expected = 9.0;
         Assert.assertEquals(expected, Calculator.power(base, exp), 0.0001); 
     }
+
+    @Test
+    public void testPower() {
+        int base = 3;
+        int exp = 0;
+        double expected = 1.0;
+        Assert.assertEquals(expected, Calculator.power(base, exp), 0.0001); 
+    }
 }
