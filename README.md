@@ -12,8 +12,6 @@ Name: Krutik Patel IMT2021024<br>
 
 ## DockerHub Link: [krutikpatel/calculator/](https://hub.docker.com/repository/docker/krutikpatel/calculator/general)
 
-<div style="page-break-after: always;"></div>
-
 
   
 
