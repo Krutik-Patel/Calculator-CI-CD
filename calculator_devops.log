@@ -28,6 +28,7 @@
 2024-10-16 06:32:31.803 [main] INFO  com.calculator.Calculator - Answer: 720.0
 2024-10-16 06:32:31.804 [main] INFO  com.calculator.Calculator - Printing operations
 2024-10-16 06:32:35.331 [main] INFO  com.calculator.Calculator - User input: 3
+
 2024-10-16 06:46:06.225 [main] INFO  com.calculator.Calculator - Initializing Calculator App
 2024-10-16 06:46:06.226 [main] INFO  com.calculator.Calculator - Printing operations
 2024-10-16 06:46:09.812 [main] INFO  com.calculator.Calculator - User input: 4
