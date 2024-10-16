@@ -17,3 +17,14 @@
 2024-10-16 06:24:08.561 [main] INFO  com.calculator.Calculator - Printing operations
 2024-10-16 06:24:11.150 [main] INFO  com.calculator.Calculator - User input: -1
 2024-10-16 06:24:11.150 [main] INFO  com.calculator.Calculator - Terminate Calculator App
+2024-10-16 06:32:23.017 [main] INFO  com.calculator.Calculator - Initializing Calculator App
+2024-10-16 06:32:23.018 [main] INFO  com.calculator.Calculator - Printing operations
+2024-10-16 06:32:24.851 [main] INFO  com.calculator.Calculator - User input: 1
+2024-10-16 06:32:26.804 [main] INFO  com.calculator.Calculator - Calculating square root of 25
+2024-10-16 06:32:26.804 [main] INFO  com.calculator.Calculator - Answer: 5.0
+2024-10-16 06:32:26.804 [main] INFO  com.calculator.Calculator - Printing operations
+2024-10-16 06:32:30.139 [main] INFO  com.calculator.Calculator - User input: 2
+2024-10-16 06:32:31.803 [main] INFO  com.calculator.Calculator - Calculating factorial of 6
+2024-10-16 06:32:31.803 [main] INFO  com.calculator.Calculator - Answer: 720.0
+2024-10-16 06:32:31.804 [main] INFO  com.calculator.Calculator - Printing operations
+2024-10-16 06:32:35.331 [main] INFO  com.calculator.Calculator - User input: 3
