@@ -13,3 +13,7 @@
 2024-09-24 14:28:51.840 [main] INFO  com.calculator.Calculator - Printing operations
 2024-09-24 14:28:58.488 [main] INFO  com.calculator.Calculator - User input: -1
 2024-09-24 14:28:58.488 [main] INFO  com.calculator.Calculator - Terminate Calculator App
+2024-10-16 06:24:08.559 [main] INFO  com.calculator.Calculator - Initializing Calculator App
+2024-10-16 06:24:08.561 [main] INFO  com.calculator.Calculator - Printing operations
+2024-10-16 06:24:11.150 [main] INFO  com.calculator.Calculator - User input: -1
+2024-10-16 06:24:11.150 [main] INFO  com.calculator.Calculator - Terminate Calculator App
